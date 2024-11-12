@@ -1,0 +1,16 @@
+version: "3"
+
+volumes:
+    db_volume:
+
+services:
+    bot_tgc:
+        build:
+            context: ./
+            dockerfile: Dockerfile
+        container_name: bot_tgc
+        restart: always
+        volumes:
+            - .:/app
+        env_file:
+            - ./.env
